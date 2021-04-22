@@ -1,5 +1,9 @@
+import React, {useState} from 'react'
 import "./App.css";
 import styled from "styled-components";
+import Form from "./components/form/Form";
+import initialData from './initial-data';
+import Draggable from 'react-draggable';
 
 
 const Month = styled.div`
@@ -44,22 +48,38 @@ const MonthBar = styled.div `
 `
 
 function App() {
+  const [state, setState] = useState(initialData);
   return (
     <div className='App'>
+
+      <Form></Form>
       <Month>
         <TextBoxContainer>
+        <Draggable>
           <TextBox>
+            <p className="handle">Drag Handle</p>
             <p>{text}</p>
           </TextBox>
+        </Draggable>
+        <Draggable>
           <TextBox>
+            <p className="handle">Drag Handle</p>
             <p>{text}</p>
           </TextBox>
+        </Draggable>
+        <Draggable>
           <TextBox>
+            <p className="handle">Drag Handle</p>
             <p>{text}</p>
           </TextBox>
+        </Draggable>
+        <Draggable>
           <TextBox>
+            <p className="handle">Drag Handle</p>
             <p>{text}</p>
           </TextBox>
+        </Draggable>
+
         </TextBoxContainer>
         <ArrowContainer>
           <Arrow><i class="fas fa-arrow-down"></i></Arrow>
